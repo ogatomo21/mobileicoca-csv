@@ -1,0 +1,26 @@
+{
+	"manifest_version": 3,
+	"name": "モバイルICOCA 利用履歴CSV出力拡張機能",
+	"version": "1.0",
+	"description": "モバイルICOCAの会員サイトで利用履歴をCSVとして書き出します。経費精算などに便利です。",
+	"permissions": [
+		"activeTab",
+		"downloads"
+	],
+	"icons": {
+		"16": "icon.png",
+		"48": "icon.png",
+		"128": "icon.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"*://*.web.mobileicoca.jr-odekake.net/*"
+			],
+			"js": [
+				"contentScript.js"
+			],
+			"all_frames": true
+		}
+	]
+}
