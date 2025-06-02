@@ -2,9 +2,10 @@
 console.log("Mobile ICOCA History CSV Export Extension Loaded");
 
 if ((location.href).match("web.mobileicoca.jr-odekake.net/iq/ir/ICCardDisp.aspx")) {
-	const rireki = document.getElementsByClassName("tit-bg")[0];
+	const rireki = document.getElementsByClassName("tit-bbg")[0];
 	const exportCSV = document.createElement("button");
 	exportCSV.innerText = "CSV書き出し";
+	exportCSV.style = "margin-left:1rem;";
 	exportCSV.onclick = function (event) {
 		event.preventDefault(); // ページの遷移を抑制
 		csv();
@@ -30,7 +31,7 @@ function downloadCSV(csv, filename) {
 
 function tableToCSV() {
 	let csv = [];
-	let rows = document.querySelectorAll("table.td-border-none tr");
+	let rows = document.querySelectorAll("tbody>tr");
 
 	for (let i = 0; i < rows.length; i++) {
 		let row = [], cols = rows[i].querySelectorAll("td, th");
